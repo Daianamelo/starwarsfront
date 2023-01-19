@@ -15,7 +15,7 @@ const Card = (props) => {
           <h5 className="card-title">{props.nombre}</h5>
           <p className="card-text">{props.descripcion}</p> 
           <Link to={"/single/"+ props.id} className="btn btn-warning">Details</Link>
-          <Link to="#" className="btn btn-light border-warning"><i className="fa-solid fa-heart"></i></Link>
+          <Link to="#" className="btn btn-light border-warning"onClick={()=>actions.agregarFavoritos(props.name)}><i className="fa-solid fa-heart"></i></Link>
         </div>
       </div>
         

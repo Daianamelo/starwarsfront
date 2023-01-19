@@ -6,6 +6,8 @@ const getState = ({
     return {
         store: {
             personajes: [],
+            personaje: {},
+            favoritos: [],
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -21,7 +23,12 @@ const getState = ({
             // // 	.catch(err =>console.error(err))
 
             // }
-
+            agregarFavorito: (name) => {
+                const store = getStore();
+                setStore({
+                    favoritos: [...store.favoritos, name]
+                })
+            },
 
             sacarInfoPersonajes: () => {
                 /**
@@ -29,31 +36,42 @@ const getState = ({
                 */
                 fetch("https://www.swapi.tech/api/people")
                     .then(res => res.json())
-                    .then(data => console.log(data.results)) //me trae el array
+                    // .then(data => console.log(data.results)) //me trae el array
                     .then(data => setStore({
                         personajes: data.results
                     })) //me setea el array
-                    .catch(err => console.error(err))
-
+                // .catch(err => console.error(err))
             },
-            changeColor: (index, color) => {
-                //get the store
-                const store = getStore();
 
-                //we have to loop the entire demo array to look for the respective index
-                //and change its color
-                const demo = store.demo.map((elm, i) => {
-                    if (i === index) elm.background = color;
-                    return elm;
-                });
 
-                //reset the global store
-                setStore({
-                    demo: demo
-                });
-            }
+            detallesPersonaje: (id) => {
+                fetch("https://www.swapi.tech/api/people/" + id)
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        personaje: data.result
+                    }))
+                // .catch(err => console.error(err))
+            },
+
+        },
+        changeColor: (index, color) => {
+            //get the store
+            const store = getStore();
+
+            //we have to loop the entire demo array to look for the respective index
+            //and change its color
+            const demo = store.demo.map((elm, i) => {
+                if (i === index) elm.background = color;
+                return elm;
+            });
+
+            //reset the global store
+            setStore({
+                demo: demo
+            });
         }
-    };
+    }
 };
+
 
 export default getState;
