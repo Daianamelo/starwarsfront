@@ -14,34 +14,23 @@ const getState = ({
             exampleFunction: () => {
                 getActions().changeColor(0, "green");
             },
-            // // function sacarInfoPersonajes() {
-            // // 	fetch("https://www.swapi.tech/api/people")
-            // // 	.then(res => res.json())
-            // // 	// .then(data => data.setPersonajes(data.results))
-            // // 	// .then(data =>console.log(data.results)) //me trae el array
-            // // 	.then(data =>setPersonajes(data.results))//me setea el array
-            // // 	.catch(err =>console.error(err))
+            sacarInfoPersonajes: () => {
+                fetch("https://www.swapi.tech/api/people/")
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        personajes: data.results
+                    }))
+                    .catch(err => console.error(err))
 
-            // }
-            agregarFavorito: (name) => {
+            },
+            agregarFavoritos: (name) => {
                 const store = getStore();
                 setStore({
                     favoritos: [...store.favoritos, name]
-                })
+                });
             },
 
-            sacarInfoPersonajes: () => {
-                /**
-                	fetch().then().then(data => setStore({ "foo": data.bar }))
-                */
-                fetch("https://www.swapi.tech/api/people")
-                    .then(res => res.json())
-                    // .then(data => console.log(data.results)) //me trae el array
-                    .then(data => setStore({
-                        personajes: data.results
-                    })) //me setea el array
-                // .catch(err => console.error(err))
-            },
+
 
 
             detallesPersonaje: (id) => {
@@ -50,7 +39,7 @@ const getState = ({
                     .then(data => setStore({
                         personaje: data.result
                     }))
-                // .catch(err => console.error(err))
+                    .catch(err => console.error(err))
             },
 
         },

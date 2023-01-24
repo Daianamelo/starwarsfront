@@ -20,11 +20,11 @@ export const Navbar = () => {
 			<div className="ml-auto">
 				<Link to="/demo">
 				<div className="dropdown">
-  <button className="btn btn-success dropdown-toggle"onClick={()=>actions.agregarFavorito()} type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <button className="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
    Favorites
   </button>
-  <ul className="dropdown-menu">
-  {store.favoritos.map((element, index) =><li><button className="dropdown-item" type="button" key={index}>{element} </button></li>
+  <ul className="dropdown-menu dropdown-menu-end">
+  {store.favoritos.map((element, index) =><li key={index}><button className="dropdown-item" type="button" key={index}>{element} </button></li>
                     )}
   </ul>
 </div>
