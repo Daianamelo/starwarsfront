@@ -3,8 +3,10 @@ import { BrowserRouter } from "react-router-dom";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Card from "../component/card.js";
-import UnaCarta from "../component/unaCarta.js";
+import Planeta from "../component/planetas.js";
 import { Context } from "../store/appContext.js";
+
+
 
 export const Home = () => {
 //personajes es el espacio de memoria, setPersonajes es la funcion que actualiza el estado y el estado inicial esta vacio es un array
@@ -36,6 +38,7 @@ const {store} = useContext(Context);
 	<>
 	{/* //este me dibuja la carta con su nombre */}
 	<div>{store.personajes.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
-
+	<div>{store.planeta.map((props)=><Planeta nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+	{/* <div>{store.planeta.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div> */}
 	</>
 );};

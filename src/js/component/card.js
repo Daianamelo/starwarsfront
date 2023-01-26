@@ -8,7 +8,8 @@ const Card = (props) => {
     const {store, actions} = useContext(Context);
 
       return ( 
-        <div className="card" style={{width:"18rem"}}>
+        <div className="container text-center">
+        <div className="card" style={{width:"18rem" }}>
           {/* https://starwars-visualguide.com/assets/img/characters/2.jpg */}
         <img src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg"}className="card-img-top" alt="..."/>
         <div className="card-body">
@@ -17,6 +18,7 @@ const Card = (props) => {
           <Link to={"/single/"+ props.id} className="btn btn-warning">Details</Link>
           <button className="btn btn-light border-warning"onClick={()=>actions.agregarFavoritos(props.nombre)}>💛</button>
         </div>
+      </div>
       </div>
         
       )
