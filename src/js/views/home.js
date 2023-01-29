@@ -38,7 +38,7 @@ const {store} = useContext(Context);
 	<>
 	{/* //este me dibuja la carta con su nombre */}
 	<div>{store.personajes.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
-	<div>{store.planeta.map((props)=><Planeta nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+	{/* <div>{store.planeta.map((props)=><Planeta nombre={props.name} id={props.uid} key={props.uid}/>)}</div> */}
 	{/* <div>{store.planeta.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div> */}
 	</>
 );};
