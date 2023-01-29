@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 
 
-const Planeta = (props) => {
+const Planetas = (props) => {
     console.log(props);
     const {store, actions} = useContext(Context);
     return ( 
  <div className="card" style={{width:"18rem"}}>
- {/* https://starwars-visualguide.com/assets/img/characters/2.jpg */}
+ {/* https://starwars-visualguide.com/assets/img/planets/2.jpg */}
 <img src={"https://starwars-visualguide.com/assets/img/planets/"+props.id+".jpg"}className="card-img-top" alt="..."/>
 <div className="card-body">
  <h5 className="card-title">{props.nombre}</h5>
@@ -19,4 +19,4 @@ const Planeta = (props) => {
 </div>
 )};
 
-export default Planeta;
+export default Planetas;

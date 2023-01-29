@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Card from "../component/card.js";
-import Planeta from "../component/planetas.js";
+import Planetas from "../component/planetas.js";
 import { Context } from "../store/appContext.js";
 
 
@@ -37,8 +37,7 @@ const {store} = useContext(Context);
 	
 	<>
 	{/* //este me dibuja la carta con su nombre */}
-	<div>{store.personajes.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
-	{/* <div>{store.planeta.map((props)=><Planeta nombre={props.name} id={props.uid} key={props.uid}/>)}</div> */}
-	{/* <div>{store.planeta.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div> */}
+	<div className="container">{store.personajes.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+	<div className="container">{store.planetas.map((props)=><Planetas nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
 	</>
 );};
