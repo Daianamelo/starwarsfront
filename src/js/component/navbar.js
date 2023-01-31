@@ -18,17 +18,17 @@ export const Navbar = () => {
 				<span className="navbar-brand mb-0 h1"></span>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
+	
 				<div className="dropdown">
   <button className="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
    Favorites
   </button>
   <ul className="dropdown-menu dropdown-menu-end">
-  {store.favoritos.map((element, index) =><li key={index}><button className="dropdown-item" type="button" key={index}>{element} </button></li>
+  {store.favoritos.map((element, index) =><li className="dropdown-item" key={index}><button onClick={()=> actions.borrarFavoritos(element)}  type="button" key={index}>{element}<i class="fas fa-eraser"></i></button></li>
                     )}
   </ul>
 </div>
-				</Link>
+			
 			</div>
 		</nav>
 	);

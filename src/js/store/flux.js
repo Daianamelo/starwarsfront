@@ -29,7 +29,7 @@ const getState = ({
             },
 
             sacarInfoVehiculos: () => {
-                fetch("https://www.swapi.tech/api/vehicles/4")
+                fetch("https://www.swapi.tech/api/vehicles/")
                     .then(res => res.json())
                     .then(data => setStore({
                         vehiculos: data.results
@@ -84,6 +84,13 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
+
+            borrarFavoritos: (id) => {
+                const store = getStore();
+                setStore({
+                    favoritos: store.favoritos.filter((item) => item != id)
+                });
+            }
 
         },
         changeColor: (index, color) => {

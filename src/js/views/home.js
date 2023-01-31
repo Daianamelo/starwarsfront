@@ -4,6 +4,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Card from "../component/card.js";
 import Planetas from "../component/planetas.js";
+import Vehiculos from "../component/vehiculos.jsx";
 import { Context } from "../store/appContext.js";
 
 
@@ -37,7 +38,8 @@ const {store} = useContext(Context);
 	
 	<>
 	{/* //este me dibuja la carta con su nombre */}
-	<div className="container">{store.personajes.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
-	<div className="container">{store.planetas.map((props)=><Planetas nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+	<div className="container  d-flex flex-row overflow-scroll ">{store.personajes.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+	<div className="container d-flex flex-row overflow-scroll">{store.planetas.map((props)=><Planetas nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+	<div className="container d-flex flex-row overflow-scroll">{store.planetas.map((props)=><Vehiculos nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
 	</>
 );};
