@@ -38,8 +38,11 @@ const {store} = useContext(Context);
 	
 	<>
 	{/* //este me dibuja la carta con su nombre */}
+	<h1 className="titulos">Personajes</h1>
 	<div className="container  d-flex flex-row overflow-scroll ">{store.personajes.map((props)=><Card nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+	<h1 className="titulos">Planets</h1>
 	<div className="container d-flex flex-row overflow-scroll">{store.planetas.map((props)=><Planetas nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
-	<div className="container d-flex flex-row overflow-scroll">{store.planetas.map((props)=><Vehiculos nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
+<h1 className="titulos">Vehiculos</h1>
+	<div className="container d-flex flex-row overflow-scroll">{store.vehiculos.map((props)=><Vehiculos nombre={props.name} id={props.uid} key={props.uid}/>)}</div>
 	</>
 );};

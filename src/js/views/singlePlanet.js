@@ -46,6 +46,6 @@ export const Single = props => {
       );
 };
 
-Single.propTypes = {
+SinglePlanet.propTypes = {
     match: PropTypes.object
 };
