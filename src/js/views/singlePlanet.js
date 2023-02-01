@@ -13,7 +13,7 @@ import {
 } from "../store/appContext";
 // import UnaCarta from "../component/unaCarta.js";
 
-export const Single = props => {
+export const SinglePlanet = props => {
     const {
         store,
         actions
