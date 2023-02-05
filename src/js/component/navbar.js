@@ -1,6 +1,9 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import {Context} from "../store/appContext.js";
+import { Registro } from "../views/registro.js";
+import { Login
+ } from "../views/login.js";
 
 
 
@@ -10,7 +13,6 @@ export const Navbar = () => {
  
 
 
-
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
       <img src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-Logo-5.png" alt="Logo" width="50" height="34" className="d-inline-block align-text-top"></img>
@@ -18,7 +20,9 @@ export const Navbar = () => {
 				<span className="navbar-brand mb-0 h1"></span>
 			</Link>
 			<div className="ml-auto">
-	
+			<Link to="/login" className="btn btn-info">login</Link>
+			<Link to="/signup" className="btn btn-primary">register</Link>
+			
 				<div className="dropdown">
   <button className="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
    Favorites

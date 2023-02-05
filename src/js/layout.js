@@ -10,7 +10,9 @@ import { SinglePlanet } from "./views/singlePlanet.js";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { SingleVehiculo } from "./views/singleVehiculo";
+import { SingleVehiculo } from "./views/singleVehiculo.js";
+import { Registro } from "./views/registro.js";
+import { Login } from "./views/login.js";
 
 //create your first component
 const Layout = () => {
@@ -29,6 +31,8 @@ const Layout = () => {
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="/singlePlanet/:theid" element={<SinglePlanet />} />
 						<Route path="/singleVehiculo/:theid" element={<SingleVehiculo />} />
+						<Route path="/signup" element={<Registro />} />
+						<Route path="/login/" element={<Login />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

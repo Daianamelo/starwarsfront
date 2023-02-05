@@ -1,7 +1,15 @@
-body {
+home {
     background-color: black;
 }
 
 .card {
     background-color: rgb(15, 13, 17);
+}
+
+single {
+    background-color: black;
+}
+
+form {
+    background-color: aliceblue;
 }
